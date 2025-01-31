@@ -1,4 +1,6 @@
 using TaskMasterApi.Data.Models;
+using TaskMasterApi.Data.Response;
+using TaskMasterApi.Interfaces;
 using Microsoft.EntityFrameworkCore;
 using Task = TaskMasterApi.Data.Models.Task;
 using TaskMasterApi.Data;

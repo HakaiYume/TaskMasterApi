@@ -1,6 +1,7 @@
 using TaskMasterApi.Data.Models;
+using TaskMasterApi.Data.Response;
 
-namespace TaskMasterApi.Services
+namespace TaskMasterApi.Interfaces
 {
     public interface ITaskService
     {

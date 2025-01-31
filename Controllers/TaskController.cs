@@ -1,5 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
-using TaskMasterApi.Services;
+using TaskMasterApi.Interfaces;
 using TaskMasterApi.Data.Models;
 
 namespace TaskMasterApi.Controllers

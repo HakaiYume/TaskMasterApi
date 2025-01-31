@@ -1,5 +1,8 @@
 using TaskMasterApi.Data;
+using TaskMasterApi.Data.Models;
 using TaskMasterApi.Services;
+using TaskMasterApi.Interfaces;
+using TaskMasterApi.Api;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -8,10 +11,11 @@ var MyOrigins = "_myAllowSpecificOrigins";
 builder.Services.AddCors(options =>
 {
     options.AddPolicy(name: MyOrigins, policy => {
-        policy.WithOrigins("*");
+        policy.WithOrigins("http://localhost:3000");
         policy.AllowAnyHeader();
-        policy.WithMethods("GET", "POST", "PUT", "DELETE");
-        });
+        policy.AllowAnyMethod();
+        policy.AllowCredentials();
+    });
 });
 
 builder.Services.AddControllers();
@@ -20,11 +24,22 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-//DBcontext
+//Settings
+builder.Services.Configure<GmailSettings>(builder.Configuration.GetSection("GmailSettings"));
+builder.Services.Configure<Settings>(builder.Configuration.GetSection("Settings"));
+builder.Services.Configure<WhatsapSettings>(builder.Configuration.GetSection("WhatsapSettings"));
+
+//DB
 builder.Services.AddSqlServer<TaskMasterBdContext>(builder.Configuration.GetConnectionString("BDConection"));
 
+//SignalR
+builder.Services.AddSignalR();
+builder.Services.AddHostedService<ServerNotifier>();
+
 //Services
-builder.Services.AddScoped<ITaskService, TaskService>();
+builder.Services.AddTransient<ITaskService, TaskService>();
+builder.Services.AddTransient<ISendEmailService, SendEmailService>();
+builder.Services.AddTransient<ISaveDocumentsService, SaveDocumentsService>();
 
 var app = builder.Build();
 
@@ -41,5 +56,8 @@ app.UseCors(MyOrigins);
 app.UseHttpsRedirection();
 
 app.MapControllers();
+
+//Hub
+app.MapHub<NotificationHub>("/Notifications");
 
 app.Run();

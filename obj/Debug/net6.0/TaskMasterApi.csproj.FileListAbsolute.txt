@@ -64,3 +64,9 @@ C:\Users\Daniel\Desktop\Programacion\Uni\TaskMasterApi\obj\Debug\net6.0\refint\T
 C:\Users\Daniel\Desktop\Programacion\Uni\TaskMasterApi\obj\Debug\net6.0\TaskMasterApi.pdb
 C:\Users\Daniel\Desktop\Programacion\Uni\TaskMasterApi\obj\Debug\net6.0\TaskMasterApi.genruntimeconfig.cache
 C:\Users\Daniel\Desktop\Programacion\Uni\TaskMasterApi\obj\Debug\net6.0\ref\TaskMasterApi.dll
+C:\Users\Daniel\Desktop\Programacion\Uni\TaskMasterApi\obj\Debug\net6.0\TaskMasterApi.sourcelink.json
+C:\Users\Daniel\Desktop\Programacion\Uni\TaskMasterApi\bin\Debug\net6.0\out\web.config
+C:\Users\Daniel\Desktop\Programacion\Uni\TaskMasterApi\bin\Debug\net6.0\out\appsettings.Development.json
+C:\Users\Daniel\Desktop\Programacion\Uni\TaskMasterApi\bin\Debug\net6.0\out\appsettings.json
+C:\Users\Daniel\Desktop\Programacion\Uni\TaskMasterApi\bin\Debug\net6.0\out\TaskMasterApi.deps.json
+C:\Users\Daniel\Desktop\Programacion\Uni\TaskMasterApi\bin\Debug\net6.0\out\TaskMasterApi.runtimeconfig.json

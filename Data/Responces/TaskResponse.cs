@@ -1,6 +1,6 @@
 using System;
 
-namespace TaskMasterApi.Data.Models
+namespace TaskMasterApi.Data.Response
 {
     public partial class TaskResponse
     {
